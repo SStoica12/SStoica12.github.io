@@ -1,0 +1,50 @@
+/* UPDATED [1]: Times New Roman throughout, including headings and links.
+   UPDATED [2]: All accent colors are blue; visited links never turn purple.
+   The darker blue is used for readable small links; pale blue is reserved for surfaces and rules. */
+:root { color-scheme: light; --ink: #242a30; --muted: #616c75; --blue: #377da6; --blue-hover: #235d80; --line: #dbe9f2; --pale-blue: #f0f7fb; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #fff; color: var(--ink); font-family: "Times New Roman", Times, "Liberation Serif", serif; font-size: 18px; line-height: 1.55; }
+a, a:visited { color: var(--blue); text-decoration: none; text-underline-offset: 4px; }
+a:hover { color: var(--blue-hover); text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--blue); outline-offset: 5px; border-radius: 2px; }
+.page { width: min(1020px, calc(100% - 80px)); margin: 68px auto 0; }
+.intro { display: grid; grid-template-columns: minmax(0,1fr) 244px; gap: 58px; align-items: start; padding-bottom: 40px; }
+h1 { font-weight: 500; font-size: 48px; line-height: 1.12; margin: 0 0 24px; letter-spacing: -.8px; }
+h2 { font-size: 30px; font-weight: 500; line-height: 1.2; margin: 0 0 25px; }
+p { margin: 0 0 16px; }
+.biography p:last-child { margin-bottom: 0; }
+.profile { padding-top: 7px; }
+.portrait { display: block; width: 100%; height: auto; border-radius: 6px; }
+.contacts { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 14px; font-size: 16px; margin-top: 16px; }
+.contacts .email { flex-basis: 100%; text-align: center; margin-top: 2px; }
+/* UPDATED [6]: Two updates, aligned dates and compact prose; no extra news. */
+section { border-top: 1px solid var(--line); padding-top: 29px; }
+.updates { padding-bottom: 30px; }
+.update { display: grid; grid-template-columns: 160px minmax(0,1fr); column-gap: 24px; margin-bottom: 22px; }
+.update:last-child { margin-bottom: 0; }
+time { color: var(--muted); font-size: 16px; padding-top: 2px; }
+.update p { margin-bottom: 8px; }
+.update p:last-child { margin-bottom: 0; }
+.announcement { margin-bottom: 10px; }
+.section-heading { display: flex; align-items: baseline; gap: 20px; justify-content: space-between; }
+.section-heading p { color: var(--muted); font-size: 15px; }
+/* UPDATED [7]: A dedicated, replaceable image for each publication; no invented scientific figures. */
+.publication { display: grid; grid-template-columns: 200px minmax(0,1fr); gap: 27px; padding: 25px 0 29px; border-bottom: 1px solid #edf1f5; scroll-margin-top: 25px; }
+.publication:first-of-type { padding-top: 8px; }
+.publication:last-child { border-bottom: 0; }
+.paper-image { width: 100%; height: auto; aspect-ratio: 8/5; object-fit: contain; border-radius: 4px; margin-top: 4px; }
+h3 { font-size: 21px; line-height: 1.28; font-weight: 600; color: var(--blue); margin: 0 0 8px; }
+.authors { font-size: 16px; line-height: 1.5; margin-bottom: 6px; }
+.venue { font-style: italic; font-size: 16px; margin-bottom: 8px; }
+.summary { font-size: 17px; margin-bottom: 11px; }
+.paper-links { display: flex; flex-wrap: wrap; gap: 7px 18px; font-size: 15px; }
+.paper-links a { text-decoration: underline; }
+.pending { color: var(--muted); }
+/* UPDATED [4, 9]: Footer has only reference attribution, never a duplicate contact block. */
+footer { border-top: 1px solid var(--line); padding: 24px 0 35px; margin-top: 20px; color: var(--muted); font-size: 15px; text-align: center; }
+.skip-link { position: absolute; top: -100px; left: 20px; background: white; padding: 10px; z-index: 2; }
+.skip-link:focus { top: 10px; }
+@media (max-width: 760px) { .page { width: calc(100% - 40px); margin-top: 36px; } .intro { grid-template-columns: minmax(0,1fr) 190px; gap: 27px; } h1 { font-size: 40px; } .contacts { gap: 5px 10px; } .update { grid-template-columns: 135px minmax(0,1fr); gap: 16px; } .publication { grid-template-columns: 155px minmax(0,1fr); gap: 20px; } }
+@media (max-width: 560px) { body { font-size: 17px; } .page { width: calc(100% - 36px); margin-top: 30px; } .intro { display: flex; flex-direction: column; gap: 25px; padding-bottom: 30px; } .profile { width: 236px; max-width: 100%; align-self: center; padding: 0; } h1 { font-size: 40px; } h2 { font-size: 28px; } .update { grid-template-columns: 1fr; gap: 8px; margin-bottom: 26px; } .section-heading { display: block; margin-bottom: 24px; } .section-heading h2 { margin-bottom: 8px; } .section-heading p { margin: 0; } .publication { grid-template-columns: 1fr; gap: 17px; } .paper-image { width: 200px; max-width: 100%; } h3 { font-size: 21px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
